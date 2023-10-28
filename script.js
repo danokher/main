@@ -1,4 +1,4 @@
-/* togglear el icono de la barra de navegacion pal responsive */
+/* togglear el icono de la barra de navegacion pal responsive ------FUNCIONA-----------------------------*/
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -7,11 +7,11 @@ menuIcon.onclick = ()=>{
     navbar.classList.toggle('active');
 };
 
-/* scrollear por las secciones activar link */
+/* scrollear por las secciones activar link --------------------------------------------------*/
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
-window.onscroll = ()=> {
+window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
@@ -25,17 +25,27 @@ window.onscroll = ()=> {
             });
         };
     });
-    /* navbar "sticky" */
+    /* navbar "sticky" ---------------------------------------------------------------------------------*/
     let header = document.querySelector('header');
 
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    /* quitar icono toggle y navabar cuando clickear el link del navbar (scroll) */
+    /* quitar icono toggle y navabar cuando clickear el link del navbar (scroll) --SI FUNCIONA------*/
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
 
-/* scroll reveal */
+
+/* typed js para que vaya escribiendo y borrando el texto multiple-------NO FUNCIONA-------------*/
+var typed = new Typed('.multiple-text', {
+    strings: ['Frontend Developer', 'YouTuber', 'Blogger'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true    
+});
+
+/* scroll reveal ------------------------NO FUNCIONA-------------------------------------*/
 ScrollReveal({ 
     // reset: true,
     distance: '80px' ,
@@ -50,12 +60,4 @@ ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 
-/* typed js para que vaya escribiendo y borrando el texto multiple*/
-const typed = new Typed('.multiple-text', {
-    Strings: ['Frontend Developer', 'YouTuber', 'Blogger'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true    
-})
 
